@@ -1,15 +1,3 @@
-<!--
-OZED HUB TECH - GitHub Pages
-File: index.html
-Instructions:
-1. Create a repository named: ozedhubtech.github.io (Public)
-2. Add this file as `index.html` on the `main` branch and commit.
-3. In the repo: Settings → Pages → Deploy from branch → main. Save.
-4. Visit: https://ozedhubtech.github.io/
-
-Customize: replace the LOGO placeholder, update mission, add links to repos and socials.
--->
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,7 +17,6 @@ Customize: replace the LOGO placeholder, update mission, add links to repos and 
     p.lead{margin:4px 0 0;color:var(--muted)}
     nav a{color:var(--muted);text-decoration:none;margin-left:18px}
 
-    /* Hero */
     .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px;align-items:center}
     .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.02)}
     .kicker{font-size:13px;color:var(--accent);text-transform:uppercase;letter-spacing:1px}
@@ -40,20 +27,17 @@ Customize: replace the LOGO placeholder, update mission, add links to repos and 
     .btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:white}
     .btn-ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
 
-    /* Projects */
     .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
     .project{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border:1px solid rgba(255,255,255,0.02)}
     .project h3{margin:0 0 6px;font-size:16px}
     .muted{color:var(--muted);font-size:14px}
 
-    /* About + Roadmap */
     .grid2{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:18px}
     .roadmap li{margin-bottom:10px}
 
     footer{margin-top:28px;padding:18px;border-radius:12px;background:var(--glass);display:flex;justify-content:space-between;align-items:center}
     footer .small{color:var(--muted);font-size:13px}
 
-    /* Responsive */
     @media (max-width:880px){
       .hero,.grid2{grid-template-columns:1fr}
       nav a{margin-left:10px}
@@ -61,114 +45,136 @@ Customize: replace the LOGO placeholder, update mission, add links to repos and 
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">OZ</div>
-        <div>
-          <h1>Ozed Hub Tech</h1>
-          <p class="lead">Empowering decentralized innovation through secure, transparent, and interoperable blockchain infrastructure.</p>
-        </div>
-      </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<div class="container">
 
-    <section class="hero">
-      <div class="card">
-        <div class="kicker">Ozed Hub Tech</div>
-        <h2>Building the Ozed Network — a Layer‑1 blockchain and operating system focused on data sovereignty</h2>
-        <p>We develop blockchain solutions that prioritize data ownership, transparency, and cross-chain interoperability. Our current focus is to build a Minimum Viable Chain (MVC) for Ozed Network: runtime, OKI, IPFS integration, node communication, and governance telemetry.</p>
-
-        <div class="actions">
-          <a class="btn btn-primary" href="https://github.com/ozedhubtech/Ozed-Network/blob/main/Minimum%20Viable%20Chain%20project%20Summary.md" target="_blank">View Ozed Network</a>
-          <a class="btn btn-ghost" href="#projects">Explore projects</a>
-        </div>
-
-        <div class="projects" style="margin-top:18px">
-          <div class="project">
-            <h3>Ozed Network (Layer 1)</h3>
-            <div class="muted">Runtime • OKI • Data sovereignty • IPFS storage</div>
-          </div>
-          <div class="project">
-            <h3>Docs & Architecture</h3>
-            <div class="muted">Design docs, topology, and runtime architecture</div>
-          </div>
-        </div>
-      </div>
-
-      <aside>
-        <div class="card">
-          <h3>Get involved</h3>
-          <p class="muted">Contribute to code, documentation, or funding opportunities. We welcome collaborators and researchers.</p>
-          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
-          <div class="muted"><strong>Contact</strong><br>ozedhubtech@gmail.com</div>
-          <div style="margin-top:12px">
-            <a class="btn btn-ghost" href="#contact">Contact Us</a>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <section id="about" class="grid2">
-      <div class="card">
-        <h2>About Ozed Hub Tech</h2>
-        <p class="muted">Ozed Hub Tech is a blockchain technology studio. We focus on building foundational infrastructure for decentralized data interoperability, hybrid (public/private) behaviors, and strong governance models. Our approach blends Substrate-based runtimes, IPFS-based data layers, and telemetry-driven governance.</p>
-
-        <h3 style="margin-top:16px">Why we exist</h3>
-        <p class="muted">Data sovereignty and accessible infrastructure are core to our mission. By creating tools that keep control of data with individuals and organizations, we aim to unlock new forms of collaboration and secure data exchange.</p>
-      </div>
-
-      <div class="card">
-        <h3 id="roadmap">Roadmap — Milestone 1 (MVC)</h3>
-        <ul class="roadmap muted">
-          <li><strong>Core Runtime</strong> — Substrate runtime and kernel interface (OKI)</li>
-          <li><strong>Data Layer</strong> — IPFS integration and incentivized pinning</li>
-          <li><strong>Node Comm</strong> — P2P node discovery and light client support</li>
-          <li><strong>Governance</strong> — Telemetry, on‑chain voting, and proposals</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="projects" style="margin-top:18px">
-      <div class="card">
-        <h2>Featured Projects</h2>
-        <div class="projects" style="margin-top:12px">
-          <div class="project">
-            <h3>Ozed Network</h3>
-            <p class="muted">Layer‑1 blockchain focused on data sovereignty, transparency, and cross‑chain collaboration. <a href="https://github.com/ozedhubtech/ozed-network" target="_blank">Repository →</a></p>
-          </div>
-          <div class="project">
-            <h3>Documentation</h3>
-            <p class="muted">Architecture, system topology, and developer guides. <a href="https://github.com/ozedhubtech/Ozed-Network/blob/main/Documentation.md" target="_blank">Docs →</a></p>
-          </div>
-          <div class="project">
-            <h3>Technical Research</h3>
-            <p class="muted">Papers and technical notes on consensus and off‑chain data commitments. <a href="https://github.com/ozedhubtech/Ozed-Network/blob/main/Technical%20Research.md" target="_blank">Research →</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" style="margin-top:18px">
-      <div class="card">
-        <h2>Contact & Follow</h2>
-        <p class="muted">For partnerships, grants, or technical collaboration, reach out.</p>
-        <p class="muted"><strong>Email:</strong> <a href="mailto:ozedhubtech@gmail.com" target="_blank"> ozedhubtech@gmail.com </a></p>
-        <p class="muted"><strong>GitHub:</strong> <a href="https://github.com/ozedhubtech" target="_blank">github.com/ozedhubtech</a></p>
-        <p class="muted"><strong>Twitter/X:</strong> <a href="#" target="_blank"> </a></p>
-      </div>
-    </section>
-
-    <footer>
-      <div class="small">© 2025 Ozed Hub Technology — All rights reserved</div>
-      <div class="small">Built with ❤️ • Open source — Apache 2.0</div>
-    </footer>
+<header>
+  <div class="brand">
+    <div class="logo">OZ</div>
+    <div>
+      <h1>Ozed Hub Tech</h1>
+      <p class="lead">Empowering decentralized innovation through secure, transparent, and interoperable blockchain infrastructure.</p>
+    </div>
   </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#investors">Investors</a>
+    <a href="#waitlist">Waitlist</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="card">
+    <div class="kicker">Ozed Hub Tech</div>
+    <h2>Building the Ozed Network — a Layer-1 blockchain focused on data sovereignty</h2>
+    <p>
+      We develop blockchain infrastructure that prioritizes data ownership, protocol-level governance,
+      and decentralized interoperability. Our current focus is the Ozed Network MVC.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="https://github.com/ozedhubtech/Ozed-Network/blob/main/Minimum%20Viable%20Chain%20project%20Summary.md" target="_blank">View Ozed Network</a>
+      <a class="btn btn-ghost" href="#projects">Explore Projects</a>
+    </div>
+  </div>
+
+  <aside>
+    <div class="card">
+      <h3>Get involved</h3>
+      <p class="muted">Contribute, collaborate, or explore funding opportunities.</p>
+      <div class="muted"><strong>Email:</strong> ozedhubtech@gmail.com</div>
+    </div>
+  </aside>
+</section>
+
+<section id="about" class="grid2">
+  <div class="card">
+    <h2>About Ozed Hub Tech</h2>
+    <p class="muted">
+      Ozed Hub Tech builds foundational blockchain infrastructure for decentralized data interoperability,
+      governance, and secure ownership.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3 id="roadmap">Roadmap — Milestone 1</h3>
+    <ul class="roadmap muted">
+      <li>Substrate Runtime & OKI</li>
+      <li>IPFS Data Layer</li>
+      <li>P2P Node Communication</li>
+      <li>On-chain Governance & Telemetry</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects" style="margin-top:18px">
+  <div class="card">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Ozed Network</h3>
+        <p class="muted">Layer-1 blockchain focused on data sovereignty.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="investors" style="margin-top:18px">
+  <div class="card">
+    <h2>Investors</h2>
+    <p class="muted">
+      Ozed Network is building a next-generation Layer-1 infrastructure focused on verifiable data ownership,
+      governance, and cross-chain collaboration.
+    </p>
+
+    <ul class="muted">
+      <li>Early-stage Layer-1 opportunity</li>
+      <li>Strong focus on data sovereignty</li>
+      <li>Substrate-based architecture</li>
+      <li>Long-term ecosystem growth</li>
+    </ul>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="#waitlist">Join Investor Waitlist</a>
+      <a class="btn btn-ghost" href="mailto:ozedhubtech@gmail.com">Request Pitch Deck</a>
+    </div>
+  </div>
+</section>
+
+<section id="waitlist" style="margin-top:18px">
+  <div class="card">
+    <h2>Join the Waitlist</h2>
+    <p class="muted">
+      Get early access to updates, investor briefings, validator programs, and ecosystem opportunities.
+    </p>
+
+    <iframe
+      src="PASTE_YOUR_GOOGLE_FORM_EMBED_LINK_HERE"
+      width="100%"
+      height="700"
+      frameborder="0"
+      style="border-radius:12px;margin-top:12px">
+    </iframe>
+  </div>
+</section>
+
+<section id="contact" style="margin-top:18px">
+  <div class="card">
+    <h2>Contact</h2>
+    <p class="muted"><strong>Email:</strong> ozedhubtech@gmail.com</p>
+    <p class="muted"><strong>GitHub:</strong> github.com/ozedhubtech</p>
+  </div>
+</section>
+
+<footer>
+  <div class="small">© 2025 Ozed Hub Tech</div>
+  <div class="small">Built with ❤️ — Open Source</div>
+</footer>
+
+</div>
 </body>
 </html>
