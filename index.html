@@ -22,7 +22,7 @@
     .kicker{font-size:13px;color:var(--accent);text-transform:uppercase;letter-spacing:1px}
     .hero h2{margin:10px 0 8px;font-size:28px}
     .hero p{color:var(--muted);line-height:1.6}
-    .actions{margin-top:16px;display:flex;gap:12px}
+    .actions{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
     .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
     .btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:white}
     .btn-ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
@@ -72,21 +72,29 @@
     <div class="kicker">Ozed Hub Tech</div>
     <h2>Building the Ozed Network — a Layer-1 blockchain focused on data sovereignty</h2>
     <p>
-      We develop blockchain infrastructure that prioritizes data ownership, protocol-level governance,
-      and decentralized interoperability. Our current focus is the Ozed Network MVC.
+      We build decentralized infrastructure that prioritizes verifiable data ownership,
+      protocol-level governance, and cross-chain interoperability.
     </p>
 
     <div class="actions">
-      <a class="btn btn-primary" href="https://github.com/ozedhubtech/Ozed-Network/blob/main/Minimum%20Viable%20Chain%20project%20Summary.md" target="_blank">View Ozed Network</a>
+      <a class="btn btn-primary" href="https://github.com/ozedhubtech/Ozed-Network" target="_blank">View Ozed Network</a>
       <a class="btn btn-ghost" href="#projects">Explore Projects</a>
     </div>
   </div>
 
+  <!-- UPDATED GET INVOLVED -->
   <aside>
     <div class="card">
       <h3>Get involved</h3>
-      <p class="muted">Contribute, collaborate, or explore funding opportunities.</p>
-      <div class="muted"><strong>Email:</strong> ozedhubtech@gmail.com</div>
+      <p class="muted">
+        Whether you’re an investor, builder, or ecosystem participant,
+        there are multiple ways to engage with Ozed Network.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="#investors">Investor Interest</a>
+        <a class="btn btn-ghost" href="#waitlist">Join Waitlist</a>
+      </div>
     </div>
   </aside>
 </section>
@@ -95,16 +103,16 @@
   <div class="card">
     <h2>About Ozed Hub Tech</h2>
     <p class="muted">
-      Ozed Hub Tech builds foundational blockchain infrastructure for decentralized data interoperability,
-      governance, and secure ownership.
+      Ozed Hub Tech is building foundational blockchain infrastructure focused on data sovereignty,
+      decentralized governance, and secure interoperability.
     </p>
   </div>
 
   <div class="card">
-    <h3 id="roadmap">Roadmap — Milestone 1</h3>
+    <h3 id="roadmap">Roadmap — Milestone 1 (MVC)</h3>
     <ul class="roadmap muted">
-      <li>Substrate Runtime & OKI</li>
-      <li>IPFS Data Layer</li>
+      <li>Substrate Runtime & Kernel Interface (OKI)</li>
+      <li>IPFS-based Data Layer</li>
       <li>P2P Node Communication</li>
       <li>On-chain Governance & Telemetry</li>
     </ul>
@@ -117,45 +125,58 @@
     <div class="projects">
       <div class="project">
         <h3>Ozed Network</h3>
-        <p class="muted">Layer-1 blockchain focused on data sovereignty.</p>
+        <p class="muted">Layer-1 blockchain infrastructure for data sovereignty.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- INVESTORS SECTION -->
 <section id="investors" style="margin-top:18px">
   <div class="card">
     <h2>Investors</h2>
     <p class="muted">
-      Ozed Network is building a next-generation Layer-1 infrastructure focused on verifiable data ownership,
-      governance, and cross-chain collaboration.
+      Ozed Network is an early-stage Layer-1 blockchain focused on protocol-level data ownership,
+      decentralized governance, and cross-chain collaboration.
     </p>
 
     <ul class="muted">
-      <li>Early-stage Layer-1 opportunity</li>
-      <li>Strong focus on data sovereignty</li>
-      <li>Substrate-based architecture</li>
-      <li>Long-term ecosystem growth</li>
+      <li>Early infrastructure-layer opportunity</li>
+      <li>Strong emphasis on data sovereignty</li>
+      <li>Substrate-based and ecosystem-ready</li>
+      <li>Long-term validator and governance participation</li>
     </ul>
 
-    <div class="actions">
-      <a class="btn btn-primary" href="#waitlist">Join Investor Waitlist</a>
-      <a class="btn btn-ghost" href="mailto:ozedhubtech@gmail.com">Request Pitch Deck</a>
-    </div>
+    <p class="muted" style="margin-top:12px">
+      <strong>Investor Contact:</strong><br>
+      <a href="mailto:ozedhubtech@gmail.com">ozedhubtech@gmail.com</a>
+    </p>
+
+    <h3 style="margin-top:18px">Investor Interest Form</h3>
+
+    <iframe
+      src="PASTE_INVESTOR_FORM_EMBED_LINK_HERE"
+      width="100%"
+      height="650"
+      frameborder="0"
+      style="border-radius:12px;margin-top:10px">
+    </iframe>
   </div>
 </section>
 
+<!-- WAITLIST SECTION -->
 <section id="waitlist" style="margin-top:18px">
   <div class="card">
     <h2>Join the Waitlist</h2>
     <p class="muted">
-      Get early access to updates, investor briefings, validator programs, and ecosystem opportunities.
+      Sign up for early updates on development progress, ecosystem opportunities,
+      validator programs, and public launches.
     </p>
 
     <iframe
-      src="PASTE_YOUR_GOOGLE_FORM_EMBED_LINK_HERE"
+      src="PASTE_WAITLIST_FORM_EMBED_LINK_HERE"
       width="100%"
-      height="700"
+      height="650"
       frameborder="0"
       style="border-radius:12px;margin-top:12px">
     </iframe>
@@ -166,13 +187,13 @@
   <div class="card">
     <h2>Contact</h2>
     <p class="muted"><strong>Email:</strong> ozedhubtech@gmail.com</p>
-    <p class="muted"><strong>GitHub:</strong> github.com/ozedhubtech</p>
+    <p class="muted"><strong>GitHub:</strong> https://github.com/ozedhubtech</p>
   </div>
 </section>
 
 <footer>
-  <div class="small">© 2025 Ozed Hub Tech</div>
-  <div class="small">Built with ❤️ — Open Source</div>
+  <div class="small">© 2025 Ozed Hub Technology</div>
+  <div class="small">Built with ❤️ • Open Source</div>
 </footer>
 
 </div>
