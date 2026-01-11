@@ -1,339 +1,496 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ozed Hub Tech — Decentralized Infrastructure</title>
-  <meta name="description" content="Ozed Hub Tech — Empowering decentralized innovation through secure, transparent, and interoperable blockchain infrastructure.">
+  <meta name="description" content="Ozed Hub Tech — Empowering decentralized innovation through secure, transparent, and interoperable blockchain infrastructure." />
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#7c3aed;--glass:rgba(255,255,255,0.03)}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:linear-gradient(180deg,#071022 0%, #071628 60%);-webkit-font-smoothing:antialiased}
-    .container{max-width:1100px;margin:36px auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
-    h1{margin:0;font-size:24px}
-    p.lead{margin:4px 0 0;color:var(--muted)}
-    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #94a3b8;
+      --accent: #7c3aed;
+      --glass: rgba(255, 255, 255, 0.03);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color: #e6eef8;
+      background: linear-gradient(180deg, #071022 0%, #071628 60%);
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 24px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #2dd4bf);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    p.lead {
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 18px;
+    }
 
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px;align-items:center}
-    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.02)}
-    .kicker{font-size:13px;color:var(--accent);text-transform:uppercase;letter-spacing:1px}
-    .hero h2{margin:10px 0 8px;font-size:28px}
-    .hero p{color:var(--muted);line-height:1.6}
-    .actions{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:white}
-    .btn-ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 28px;
+      margin-top: 28px;
+      align-items: center;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+    }
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.02);
+    }
+    .kicker {
+      font-size: 13px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .hero h2 {
+      margin: 10px 0 8px;
+      font-size: 28px;
+    }
+    .hero p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .actions {
+      margin-top: 16px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), #06b6d4);
+      color: white;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
 
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
-    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border:1px solid rgba(255,255,255,0.02)}
-    .project h3{margin:0 0 6px;font-size:16px}
-    .muted{color:var(--muted);font-size:14px}
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .project {
+      padding: 14px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+      border: 1px solid rgba(255, 255, 255, 0.02);
+    }
+    .project h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-    .grid2{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:18px}
-    .roadmap li{margin-bottom:10px}
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .roadmap li {
+      margin-bottom: 10px;
+    }
 
-    section {margin-top: 20px;}
+    section {
+      margin-top: 20px;
+    }
 
-    .hero {/*max-width: 1100px; same as your .container */   margin: 20px auto; padding: 20px;}
+    /* Adjusted simple-terms section styling */
+    #simple-terms {
+      margin: 60px auto;
+      max-width: 1100px;
+      padding: 24px;
+    }
 
-    .hero .card {width: 100%;}
-    
-    footer{margin-top:28px;padding:18px;border-radius:12px;background:var(--glass);display:flex;justify-content:space-between;align-items:center}
-    footer .small{color:var(--muted);font-size:13px}
+    #simple-terms .card {
+      padding: 20px;
+      border-radius: 14px;
+      background: var(--card);
+      box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.02);
+    }
 
-    @media (max-width:880px){
-      .hero,.grid2{grid-template-columns:1fr}
-      nav a{margin-left:10px}
-      .logo{width:54px;height:54px}
+    #simple-terms h3 {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Plain link style for both CTAs in simple-terms */
+    #simple-terms a {
+      color: var(--accent);
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    #simple-terms a + a {
+      margin-left: 20px;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding: 18px;
+      border-radius: 12px;
+      background: var(--glass);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 880px) {
+      .hero,
+      .grid2 {
+        grid-template-columns: 1fr;
+      }
+      nav a {
+        margin-left: 10px;
+      }
+      .logo {
+        width: 54px;
+        height: 54px;
+      }
+      #simple-terms {
+        padding: 16px;
+      }
+      #simple-terms .card {
+        padding: 16px;
+      }
     }
   </style>
 </head>
 
 <body>
-<div class="container">
-
-<header>
-  <div class="brand">
-    <div class="logo">OZ</div>
-    <div>
-      <h1>Ozed Hub Tech</h1>
-      <p class="lead">Empowering decentralized innovation through secure, transparent, and interoperable blockchain infrastructure.</p>
-    </div>
-  </div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero">
-    <div class="card">
-      <div class="kicker">OZED HUB TECH</div>
-      <h2>Reclaiming Data Sovereignty in a Decentralized World</h2>
-      <p>
-        Ozed Network is a Layer-1 blockchain infrastructure designed to give individuals and organizations verifiable ownership, control, and governance over their data.
-      </p>
-      <p class="muted">
-        In today’s digital economy, data is everywhere, but true ownership is nowhere. Ozed Network addresses this gap by embedding data sovereignty, transparent governance, and cross-chain interoperability directly at the protocol level.
-      </p>
-      <p class="muted">
-        Read the <a href="https://docs.google.com/document/d/e/2PACX-1vRUYuOu54WRvcJfbu1P0yFxcJczzIjR3AN1cL1kR8TFSljMRh0GMlD3DehL3DvwS4RxanpSN2YpMyFa/pub" target="_blank" rel="noopener noreferrer" style="color: #7c3aed; text-decoration: underline; font-weight: 600;">Ozed Network White Paper</a> to understand our architecture, governance approach, and Milestone-1 roadmap.
-      </p>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">OZ</div>
+        <div>
+          <h1>Ozed Hub Tech</h1>
+          <p class="lead">Empowering decentralized innovation through secure, transparent, and interoperable blockchain infrastructure.</p>
+        </div>
       </div>
-</section>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-<section class="section">
-  <div class="card">
-    <h3>The Problem with Today’s Data Economy</h3>
-    <p class="muted">
-      Data today lives across centralized platforms, cloud providers, and third-party systems.
-      While individuals and organizations generate immense value; ownership, control,
-      and governance of that data remain fragmented or opaque.
-    </p>
-    <p class="muted">
-      This creates systemic risks, loss of sovereignty, regulatory exposure,
-      vendor lock-in, and limited accountability.
-    </p>
-    <p class="muted">
-      Ozed Network exists to address this foundational gap.
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="card">
-    <h3>The Ozed Network Solution</h3>
-    <p>
-      Ozed Network is a Layer-1 blockchain infrastructure purpose-built for data sovereignty.
-    </p>
-    <p class="muted">
-      Instead of treating data as an application-layer concern, Ozed embeds ownership,
-      integrity, and governance directly into the protocol layer, creating a verifiable
-      foundation for decentralized systems.
-    </p>
-
-    <ul class="muted">
-      <li>Protocol-level data ownership</li>
-      <li>Native governance and accountability</li>
-      <li>Decentralized storage coordination</li>
-      <li>Cross-chain interoperability by design</li>
-    </ul>
-  </div>
-</section>
-
-<section id="simple-terms" style="margin: 80px auto; max-width: 900px; padding: 40px; border: 1px solid #1f2937; border-radius: 12px;">
-  <div class="card">
-  <h3 style="margin-bottom: 1.5rem;">What This Means in Simple Terms</h3>
-    </div>
-
-  <p>
-    Today, your personal and organisational data lives on many platforms such as banks,
-    social networks, cloud services, government systems.
-    Yet in most cases, <strong>you don’t truly own or control that data</strong>.
-  </p>
-
-  <p>
-    It can be copied, altered, restricted, or monetised by third parties, often
-    without your knowledge or consent.
-  </p>
-
-  <p>
-    <strong>Ozed Network</strong> is building a foundational digital infrastructure
-    that changes this.
-  </p>
-
-  <p>
-    In simple terms, it is a <strong>neutral, shared record system</strong> where data:
-  </p>
-
-  <ul>
-    <li>Has a clear and verifiable owner</li>
-    <li>Cannot be secretly altered</li>
-    <li>Can be trusted across organisations and borders</li>
-  </ul>
-
-  <p>
-    Think of it like a <strong>land registry or public ledger</strong>, but for digital
-    information instead of property.
-  </p>
-
-  <p>
-    You don’t need to be technical to understand the problem or follow the journey.
-  </p>
-
-  <div style="margin-top: 30px;">
-  <a href="#waitlist" 
-     style="color: #2563eb; text-decoration: underline; cursor: pointer;">
-    Join the Waitlist
-  </a>
-
-  <a href="https://www.linkedin.com/in/alexander-adogah-796129352" 
-     target="_blank" 
-     style="margin-left: 20px; padding: 12px 20px; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: inline-block;">
-    Follow Project Updates
-  </a>
-</div>
-</section> 
-
-  
-<section class="section">
-  <div class="card">
-    <h3>How Ozed Network Works</h3>
-    <p class="muted">
-      Ozed Network is designed around a Minimum Viable Chain (MVC) approach,
-      prioritizing stability, modularity, and long-term scalability.
-    </p>
-
-    <ul class="muted">
-      <li>Substrate-based Layer-1 runtime</li>
-      <li>Ozed Kernel Interface (OKI)</li>
-      <li>Decentralized data layer integration</li>
-      <li>Governance telemetry and monitoring</li>
-    </ul>
-
-    <p class="muted">
-      Full technical details are documented in the
-      <a href="https://docs.google.com/document/d/e/2PACX-1vRUYuOu54WRvcJfbu1P0yFxcJczzIjR3AN1cL1kR8TFSljMRh0GMlD3DehL3DvwS4RxanpSN2YpMyFa/pub"
-         target="_blank" rel="noopener noreferrer">
-        White Paper
-      </a>.
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="card">
-    <h3>Current Status</h3>
-    <p class="muted">
-      Ozed Network is currently in active development, focused on delivering
-      <strong>Milestone-1: the Minimum Viable Chain (MVC)</strong>.
-    </p>
-
-    <p class="muted">
-      This phase establishes the core runtime, governance primitives,
-      and data coordination layer required for future expansion.
-    </p>
-
-    <ul class="muted">
-      <li>Milestone-1: Minimum Viable Chain (current)</li>
-      <li>Milestone-2: Ecosystem & integrations</li>
-      <li>Milestone-3: Cross-chain and enterprise adoption</li>
-    </ul>
-  </div>
-</section>
-
-<section id="get-involved" class="section">
-  <div class="card">
-    <h3>Get Involved</h3>
-    <p class="muted">
-      Whether you’re an investor, builder, or ecosystem participant,
-      there are multiple ways to engage with Ozed Network.
-    </p>
-
-    <div class="actions">
-      <a class="btn btn-primary" href="#investors">Investor Interest</a>
-      <a class="btn btn-ghost" href="#waitlist">Join Waitlist</a>
-      <a class="btn btn-ghost"
-         href="https://docs.google.com/document/d/e/2PACX-1vRUYuOu54WRvcJfbu1P0yFxcJczzIjR3AN1cL1kR8TFSljMRh0GMlD3DehL3DvwS4RxanpSN2YpMyFa/pub"
-         target="_blank" rel="noopener noreferrer">
-        View White Paper
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="grid2">
-  <div class="card">
-    <h2>About Ozed Hub Tech</h2>
-    <p class="muted" style="font-style: italic; margin-bottom: 12px;">
-      As innovation expands the known, the frontier doesn't disappear — it shifts.
-    </p>
-    <p class="muted">
-      Ozed Hub Tech is pioneering foundational blockchain infrastructure designed to empower true data sovereignty, enable decentralized governance, and deliver secure interoperability across ecosystems. Our technology ensures individuals and organizations reclaim ownership and control of their digital data in an increasingly connected world.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3 id="roadmap">Roadmap — Milestone 1 (MVC)</h3>
-    <ul class="roadmap muted">
-      <li>Runtime Functionality</li>
-      <li>IPFS-based Data Layer</li>
-      <li>P2P Node Communication</li>
-      <li>On-chain Governance & Telemetry</li>
-    </ul>
-  </div>
-</section>
-
-<section id="projects" style="margin-top:18px">
-  <div class="card">
-    <h2>Featured Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>Ozed Network</h3>
-        <p class="muted">Layer-1 blockchain infrastructure for data sovereignty.</p>
+    <section class="hero">
+      <div class="card">
+        <div class="kicker">OZED HUB TECH</div>
+        <h2>Reclaiming Data Sovereignty in a Decentralized World</h2>
+        <p>
+          Ozed Network is a Layer-1 blockchain infrastructure designed to give individuals and organizations verifiable ownership, control, and governance over their data.
+        </p>
+        <p class="muted">
+          In today’s digital economy, data is everywhere, but true ownership is nowhere. Ozed Network addresses this gap by embedding data sovereignty, transparent governance, and cross-chain interoperability directly at the protocol level.
+        </p>
+        <p class="muted">
+          Read the <a href="https://docs.google.com/document/d/e/2PACX-1vRUYuOu54WRvcJfbu1P0yFxcJczzIjR3AN1cL1kR8TFSljMRh0GMlD3DehL3DvwS4RxanpSN2YpMyFa/pub" target="_blank" rel="noopener noreferrer">Ozed Network White Paper</a> to understand our architecture, governance approach, and Milestone-1 roadmap.
+        </p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- INVESTORS SECTION -->
-<section id="investors" style="margin-top:18px">
-  <div class="card">
-    <h2>Investors</h2>
-    <p class="muted">
-      Ozed Network is an early-stage Layer-1 blockchain focused on protocol-level data ownership,
-      decentralized governance, and cross-chain collaboration.
-    </p>
+    <section id="simple-terms">
+      <div class="card">
+        <h3>What This Means in Simple Terms</h3>
 
-    <ul class="muted">
-      <li>Early infrastructure-layer opportunity</li>
-      <li>Strong emphasis on data sovereignty</li>
-      <li>Substrate-based and ecosystem-ready</li>
-      <li>Long-term validator and governance participation</li>
-    </ul>
+        <p>
+          Today, your personal and organisational data lives on many platforms such as banks,
+          social networks, cloud services, government systems.
+          Yet in most cases, <strong>you don’t truly own or control that data</strong>.
+        </p>
 
-    <p class="muted" style="margin-top:12px">
-      <strong>Investor Contact:</strong><br>
-      <a href="mailto:ozedhubtech@gmail.com">ozedhubtech@gmail.com</a>
-    </p>
+        <p>
+          It can be copied, altered, restricted, or monetised by third parties, often
+          without your knowledge or consent.
+        </p>
 
-<div class="founder-attribution" style="margin-bottom:24px;">
-  <h5 style="margin-bottom:6px;">Founder & Lead Architect</h5>
-  <p style="margin:0;">
-    Alexander Ozaveshe Adogah
-    <a
-      href="https://www.linkedin.com/in/alexander-adogah-796129352"
-      target="_blank"
-      rel="noopener noreferrer"
-      style="color:#4f46e5; text-decoration:none; font-weight:500;"
-    >
-      LinkedIn →
-    </a>
-  </p>
-</div>
-    
-    <h3 style="margin-top:18px">Investor Interest Form</h3>
+        <p>
+          <strong>Ozed Network</strong> is building a foundational digital infrastructure
+          that changes this.
+        </p>
 
-    <iframe
-  src="https://docs.google.com/forms/d/e/1FAIpQLScRATEJ-8rbCPn3offkxcy5UJae8TvC8m0wOFQ1fhIKDjG9Wg/viewform?embedded=true"
-  width="100%"
-  height="700"
-  frameborder="0"
-  style="border-radius:12px; margin-top:12px;"
-  marginheight="0"
-  marginwidth="0"
-    >
-    </iframe>
-  </div>
-</section>
+        <p>
+          In simple terms, it is a <strong>neutral, shared record system</strong> where data:
+        </p>
 
-<!-- WAITLIST SECTION -->
- <section id="waitlist">
+        <ul>
+          <li>Has a clear and verifiable owner</li>
+          <li>Cannot be secretly altered</li>
+          <li>Can be trusted across organisations and borders</li>
+        </ul>
+
+        <p>
+          Think of it like a <strong>land registry or public ledger</strong>, but for digital
+          information instead of property.
+        </p>
+
+        <p>
+          You don’t need to be technical to understand the problem or follow the journey.
+        </p>
+
+        <div style="margin-top: 30px;">
+          <a href="#waitlist">Join the Waitlist</a>
+          <a href="https://www.linkedin.com/in/alexander-adogah-796129352" target="_blank">Follow Project Updates</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h3>The Problem with Today’s Data Economy</h3>
+        <p class="muted">
+          Data today lives across centralized platforms, cloud providers, and third-party systems.
+          While individuals and organizations generate immense value; ownership, control,
+          and governance of that data remain fragmented or opaque.
+        </p>
+        <p class="muted">
+          This creates systemic risks, loss of sovereignty, regulatory exposure,
+          vendor lock-in, and limited accountability.
+        </p>
+        <p class="muted">
+          Ozed Network exists to address this foundational gap.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h3>The Ozed Network Solution</h3>
+        <p>
+          Ozed Network is a Layer-1 blockchain infrastructure purpose-built for data sovereignty.
+        </p>
+        <p class="muted">
+          Instead of treating data as an application-layer concern, Ozed embeds ownership,
+          integrity, and governance directly into the protocol layer, creating a verifiable
+          foundation for decentralized systems.
+        </p>
+
+        <ul class="muted">
+          <li>Protocol-level data ownership</li>
+          <li>Native governance and accountability</li>
+          <li>Decentralized storage coordination</li>
+          <li>Cross-chain interoperability by design</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h3>How Ozed Network Works</h3>
+        <p class="muted">
+          Ozed Network is designed around a Minimum Viable Chain (MVC) approach,
+          prioritizing stability, modularity, and long-term scalability.
+        </p>
+
+        <ul class="muted">
+          <li>Substrate-based Layer-1 runtime</li>
+          <li>Ozed Kernel Interface (OKI)</li>
+          <li>Decentralized data layer integration</li>
+          <li>Governance telemetry and monitoring</li>
+        </ul>
+
+        <p class="muted">
+          Full technical details are documented in the
+          <a href="https://docs.google.com/document/d/e/2PACX-1vRUYuOu54WRvcJfbu1P0yFxcJczzIjR3AN1cL1kR8TFSljMRh0GMlD3DehL3DvwS4RxanpSN2YpMyFa/pub" target="_blank" rel="noopener noreferrer">
+            White Paper
+          </a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h3>Current Status</h3>
+        <p class="muted">
+          Ozed Network is currently in active development, focused on delivering
+          <strong>Milestone-1: the Minimum Viable Chain (MVC)</strong>.
+        </p>
+
+        <p class="muted">
+          This phase establishes the core runtime, governance primitives,
+          and data coordination layer required for future expansion.
+        </p>
+
+        <ul class="muted">
+          <li>Milestone-1: Minimum Viable Chain (current)</li>
+          <li>Milestone-2: Ecosystem & integrations</li>
+          <li>Milestone-3: Cross-chain and enterprise adoption</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="get-involved" class="section">
+      <div class="card">
+        <h3>Get Involved</h3>
+        <p class="muted">
+          Whether you’re an investor, builder, or ecosystem participant,
+          there are multiple ways to engage with Ozed Network.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#investors">Investor Interest</a>
+          <a class="btn btn-ghost" href="#waitlist">Join Waitlist</a>
+          <a class="btn btn-ghost"
+             href="https://docs.google.com/document/d/e/2PACX-1vRUYuOu54WRvcJfbu1P0yFxcJczzIjR3AN1cL1kR8TFSljMRh0GMlD3DehL3DvwS4RxanpSN2YpMyFa/pub"
+             target="_blank" rel="noopener noreferrer">
+            View White Paper
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="grid2">
+      <div class="card">
+        <h2>About Ozed Hub Tech</h2>
+        <p class="muted" style="font-style: italic; margin-bottom: 12px;">
+          As innovation expands the known, the frontier doesn't disappear — it shifts.
+        </p>
+        <p class="muted">
+          Ozed Hub Tech is pioneering foundational blockchain infrastructure designed to empower true data sovereignty, enable decentralized governance, and deliver secure interoperability across ecosystems. Our technology ensures individuals and organizations reclaim ownership and control of their digital data in an increasingly connected world.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 id="roadmap">Roadmap — Milestone 1 (MVC)</h3>
+        <ul class="roadmap muted">
+          <li>Runtime Functionality</li>
+          <li>IPFS-based Data Layer</li>
+          <li>P2P Node Communication</li>
+          <li>On-chain Governance & Telemetry</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-top:18px">
+      <div class="card">
+        <h2>Featured Projects</h2>
+        <div class="projects">
+          <div class="project">
+            <h3>Ozed Network</h3>
+            <p class="muted">Layer-1 blockchain infrastructure for data sovereignty.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTORS SECTION -->
+    <section id="investors" style="margin-top:18px">
+      <div class="card">
+        <h2>Investors</h2>
+        <p class="muted">
+          Ozed Network is an early-stage Layer-1 blockchain focused on protocol-level data ownership,
+          decentralized governance, and cross-chain collaboration.
+        </p>
+
+        <ul class="muted">
+          <li>Early infrastructure-layer opportunity</li>
+          <li>Strong emphasis on data sovereignty</li>
+          <li>Substrate-based and ecosystem-ready</li>
+          <li>Long-term validator and governance participation</li>
+        </ul>
+
+        <p class="muted" style="margin-top:12px">
+          <strong>Investor Contact:</strong><br />
+          <a href="mailto:ozedhubtech@gmail.com">ozedhubtech@gmail.com</a>
+        </p>
+
+        <div class="founder-attribution" style="margin-bottom:24px;">
+          <h5 style="margin-bottom:6px;">Founder & Lead Architect</h5>
+          <p style="margin:0;">
+            Alexander Ozaveshe Adogah
+            <a
+              href="https://www.linkedin.com/in/alexander-adogah-796129352"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color:#4f46e5; text-decoration:none; font-weight:500;"
+              >LinkedIn →</a
+            >
+          </p>
+        </div>
+
+        <h3 style="margin-top:18px">Investor Interest Form</h3>
+
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLScRATEJ-8rbCPn3offkxcy5UJae8TvC8m0wOFQ1fhIKDjG9Wg/viewform?embedded=true"
+          width="100%"
+          height="700"
+          frameborder="0"
+          style="border-radius:12px; margin-top:12px;"
+          marginheight="0"
+          marginwidth="0"
+        ></iframe>
+        </div>
+        </section>
+
+        <!-- WAITLIST SECTION -->
+<section id="waitlist">
   <div class="container">
     <div class="card">
       <h2>Join the Ozed Network Waitlist</h2>
@@ -354,31 +511,21 @@
   </div>
 </section>
 
-
 <section id="contact" style="margin-top:18px">
   <div class="card">
     <h2>Contact</h2>
     <p class="muted">
       <strong>Email:</strong>
-      <a href="mailto:ozedhubtech@gmail.com" style="color: var(--muted); text-decoration: none;">
-        ozedhubtech@gmail.com
-      </a>
+      <a href="mailto:ozedhubtech@gmail.com" style="color: var(--muted); text-decoration: none;">ozedhubtech@gmail.com</a>
     </p>
     <p class="muted">
       <strong>GitHub:</strong>
-      <a href="https://github.com/ozedhubtech" target="_blank" rel="noopener noreferrer" style="color: var(--muted); text-decoration: none;">
-        github.com/ozedhubtech
-      </a>
+      <a href="https://github.com/ozedhubtech" target="_blank" rel="noopener noreferrer" style="color: var(--muted); text-decoration: none;">github.com/ozedhubtech</a>
     </p>
   </div>
 </section>
-
 
 <footer>
   <div class="small">© 2025 Ozed Hub Tech</div>
   <div class="small">Built with ❤️ • Open Source</div>
 </footer>
-
-</div>
-</body>
-</html>
